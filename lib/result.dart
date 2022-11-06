@@ -4,8 +4,9 @@ class Result extends StatelessWidget {
   //const Result({Key key}) : super(key: key);
 
   final int resultScore;
+  final Function reset;
 
-  Result(this.resultScore);
+  Result(this.resultScore, this.reset);
 
   String get resultPhrase {
     String resultText;
@@ -60,6 +61,13 @@ class Result extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(
+            height: 20.0,
+          ),
+          ElevatedButton.icon(
+              onPressed: reset,
+              icon: Icon(Icons.loop_rounded),
+              label: Text('Restart'))
         ],
       ),
     );
